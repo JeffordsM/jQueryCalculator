@@ -15,6 +15,7 @@ var equation = "";
 
 
 numBtn.on("click", function(e) {
+
     e.preventDefault();
     var firstNumber = ($(this).attr("value"))
     pushNum.append(firstNumber)
@@ -53,4 +54,23 @@ equalBtn.on("click", function(e) {
     var y = bottomNum.text();
     console.log(x + equation + y);
 
+});
+
+opBtn.on('click', function (e) {
+    e.preventDefault();
+    var opNum = ($(this).attr("value"))
+    operator.append(opNum)
+
+    if (($(this).attr('value')) === 'plus') {
+        opNum = '+';
+    }
+    else if (($(this).attr('value')) === 'minus')
+     { opNum = '-'; }
+    else if (($(this).attr('value')) === 'times')
+     { opNum = 'x'; }
+    else if (($(this).attr('value')) === 'divide')
+     { opNum = '/';
+    }
+
+    else { opNum = '^'; } console.log(opNum);
 });
